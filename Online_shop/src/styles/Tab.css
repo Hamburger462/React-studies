@@ -1,0 +1,12 @@
+#Shop-main{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Card{
+    width: 200px;
+    border: 2px solid;
+    padding: 5px;
+}
