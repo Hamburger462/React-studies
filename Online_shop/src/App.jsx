@@ -1,10 +1,14 @@
 import Tab from "./components/Tab";
 import TabLink from "./components/TabLink";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-    const [currentTab, useTab] = useState("shop");
+    const [currentTab, useTab] = useState(localStorage.getItem("tab") || "shop");
+
+    useEffect(() => {
+        localStorage.setItem("tab", currentTab);
+    }, [currentTab]);
 
     return (
         <>

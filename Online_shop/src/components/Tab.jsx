@@ -1,5 +1,5 @@
 import ProductCard from "./ProductCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Tab.css";
 
 function Tab(props) {
@@ -53,7 +53,15 @@ function Tab(props) {
         alert(`${name} has been added to the cart`);
     }
 
-    const [profileInfo, useProfile] = useState(guest);
+    const [profileInfo, useProfile] = useState(JSON.parse(localStorage.getItem("profile")) || guest);
+
+    useEffect(() => {
+        localStorage.setItem("profile", JSON.stringify(profileInfo));
+    }, [profileInfo]);
+
+    useEffect(() => {
+        document.title = profileInfo.username
+    }, [profileInfo.username]);
 
     const shop_temp = (
         <section>
