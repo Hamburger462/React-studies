@@ -1,0 +1,26 @@
+.Auth-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.Auth-nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    border: 2px solid;
+    padding: 4px 8px;
+    transition: 0.3s;
+}
+
+.Auth-nav-link:hover {
+    transform: scale(1.05);
+    color: white;
+    background-color: black;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
