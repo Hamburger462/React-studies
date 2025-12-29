@@ -24,3 +24,8 @@ form{
     flex-direction: column;
     gap: 10px;
 }
+
+.Error{
+    font-size: 14px;
+    color:red;
+}
