@@ -1,0 +1,28 @@
+#Shop-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#Shop-searchbar{
+    margin-bottom: 20px;
+}
+
+.Card{
+    border: 2px solid;
+    padding: 5px;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Card:hover{
+    transform: scale(1.05);
+}
+
+.Card > img{
+    aspect-ratio: 1/1;
+    width: 150px;
+}
