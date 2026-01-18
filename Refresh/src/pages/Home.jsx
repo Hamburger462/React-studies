@@ -45,7 +45,7 @@ function Home() {
     //     localStorage.setItem("user", JSON.stringify(profileInfo));
     // }, [profileInfo]);
 
-    const [searchName, useSearchName] = useState(null);
+    const [searchName, useSearchName] = useState("");
 
     const navigate = useNavigate();
 
@@ -63,7 +63,7 @@ function Home() {
 
         useProducts(json.products);
 
-        navigate(`/products?search=${name}`);
+        navigate(`/?search=${name ? "" : name}`);
     }
 
     const [searchParams, setSearchParams] = useSearchParams();

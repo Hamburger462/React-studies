@@ -10,7 +10,7 @@ function ProductCard({data, addCart}){
     const card_data = data;
     return (
         <>
-            <div className="Card" onClick={() => navigate(`/product/${card_data.id}?search=${searchParams.get("search")}`)}>
+            <div className="Card" onClick={() => navigate(`/product/${card_data.id}?search=${searchParams.get("search") || ""}`)}>
                 <img src={card_data.thumbnail} alt="logo"></img>
                 <p>{card_data.title}</p>
                 <div>{card_data.price}</div>

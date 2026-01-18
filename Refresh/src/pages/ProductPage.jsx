@@ -34,7 +34,7 @@ function ProductPage() {
 
     return (
         <>
-            <button onClick={() => navigate(`/products?search=${searchParams.get("search")}`)}>Go back</button>
+            <button onClick={() => navigate(`/?search=${searchParams.get("search")}`)}>Go back</button>
             <div id="Product-main">
                 <div>
                     <img id="Product-img" src={product.images[0]}></img>
