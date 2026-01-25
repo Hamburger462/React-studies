@@ -1,0 +1,8 @@
+#Product-main{
+    display: flex;
+}
+
+#Product-img{
+    aspect-ratio: 1/1;
+    width: 300px;
+}
