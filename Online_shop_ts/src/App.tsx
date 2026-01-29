@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { ProductForm } from "./components/ProductForm";
 import { ProductList } from "./components/ProductList";
@@ -22,9 +22,23 @@ export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   function addToCart(product: Product){
-    setCart(cart.map(item => item.product === product ? {...item, amount: item.amount++} : item)
-    )
+    setCart(prev => {
+      const exists = prev.find(item => item.product.id === product.id);
+
+      if (exists) {
+        return prev.map(item =>
+      item.product.id === product.id ? { ...item, amount: item.amount + 1 } : item
+    );
   }
+
+      return [...prev, { ...product, quantity: 1 }];
+});
+
+  }
+
+  useEffect(() => {
+    console.log(cart)
+  }, [cart])
 
   // Редактирование
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
